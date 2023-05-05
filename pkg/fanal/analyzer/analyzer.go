@@ -146,8 +146,9 @@ type PostAnalysisInput struct {
 }
 
 type AnalysisOptions struct {
-	Offline      bool
-	FileChecksum bool
+	Offline       bool
+	FileChecksum  bool
+	CustomOptions map[Type]interface{}
 }
 
 type AnalysisResult struct {

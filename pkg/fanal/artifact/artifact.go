@@ -11,23 +11,24 @@ import (
 )
 
 type Option struct {
-	AnalyzerGroup     analyzer.Group // It is empty in OSS
-	DisabledAnalyzers []analyzer.Type
-	DisabledHandlers  []types.HandlerType
-	SkipFiles         []string
-	SkipDirs          []string
-	FilePatterns      []string
-	NoProgress        bool
-	Insecure          bool
-	Offline           bool
-	AppDirs           []string
-	SBOMSources       []string
-	RekorURL          string
-	Platform          string
-	DockerHost        string
-	Slow              bool // Lower CPU and memory
-	AWSRegion         string
-	FileChecksum      bool // For SPDX
+	AnalyzerGroup         analyzer.Group // It is empty in OSS
+	DisabledAnalyzers     []analyzer.Type
+	DisabledHandlers      []types.HandlerType
+	SkipFiles             []string
+	SkipDirs              []string
+	FilePatterns          []string
+	NoProgress            bool
+	Insecure              bool
+	Offline               bool
+	AppDirs               []string
+	SBOMSources           []string
+	RekorURL              string
+	Platform              string
+	DockerHost            string
+	Slow                  bool // Lower CPU and memory
+	AWSRegion             string
+	FileChecksum          bool // For SPDX
+	AnalyzerCustomOptions map[analyzer.Type]interface{}
 
 	// Git repositories
 	RepoBranch string
