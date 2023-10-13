@@ -1,7 +1,6 @@
 package walker
 
 import (
-	"fmt"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -38,8 +37,6 @@ func (w FS) Walk(root string, fn WalkFunc) error {
 		}
 
 		filePath = filepath.Clean(filePath)
-		fmt.Println("Walk path :  ", filePath)
-		fmt.Println("==================")
 
 		// For exported rootfs (e.g. images/alpine/etc/alpine-release)
 		relPath, err := filepath.Rel(root, filePath)
@@ -65,8 +62,6 @@ func (w FS) Walk(root string, fn WalkFunc) error {
 		}
 
 		if err = fn(relPath, info, w.fileOpener(filePath)); err != nil {
-			fmt.Printf("Error Path %s \n", filePath)
-			fmt.Println("==================")
 			return nil
 		}
 		return nil
